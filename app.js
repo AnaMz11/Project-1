@@ -39,7 +39,8 @@ function handlePlayerChange(){
 // function messageDisplay () {
 //   if (exptectedButton === computerChoice)
 // }
-const arrayOfMessages = ["On to the next round!","Wow! Great Job!"]
+const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Never seen that type of memory before! Next Round"]
+
 const wrongChoiceMessage = ["Wrong choice! You have to start over!"]
 
 //fucntion to change color of buttons
@@ -64,10 +65,11 @@ buttonsArray.forEach((button => {
         //user selected correct button
         //if no more choices left then increment round.
         if(computerChoice.length === 0){
-          statusDisplay.innerHTML = Math.floor(Math.random() * arrayOfMessages.length);
+          const randomNum = Math.floor(Math.random() * arrayOfMessages.length);
+          statusDisplay.innerHTML = arrayOfMessages[randomNum]
           round++;
           colorButton(0);
-        }ß
+        }
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
@@ -103,7 +105,6 @@ for (let i = 0; i <buttonsArray.length; i++) {
 }
 
 
-
 function colorButton (currentIndex) {
     // statusDisplay.innerHTML = ""
   if(currentIndex<round){
@@ -120,16 +121,12 @@ function colorButton (currentIndex) {
   }
 }
 
-
-
 //Restart Game
 function handleStartGame () {
   statusDisplay.innerHTML = "Starting Game"
   //calls colorButton Function
   colorButton(0)
-
 }
-
 
 //EVENT LISTENERS
 
