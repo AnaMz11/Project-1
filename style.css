@@ -1,0 +1,50 @@
+
+body {
+  background-color: antiquewhite;
+  background-image: url('https://cdn3.vectorstock.com/i/1000x1000/12/57/rainbow-color-gradient-mesh-background-trendy-vector-20601257.jpg');
+  background-size: cover;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Alegreya', serif;
+  font-size: 60px;
+}
+
+
+.button {
+  background-color: black;
+  font-size: 15x;
+  border: 0px;
+  width: 250px;
+  height: 10em;
+  border-radius: 12px; 
+}
+
+/* #button-grid-top{
+  text-align: center;
+  padding-top: 15%;
+  justify-content: center;
+  align-content: center;
+  height: auto;
+}
+#button-grid-bottom{
+  text-align: center;
+  padding: 25px;
+
+} */
+
+#button-grid{
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2,auto);
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin:125px auto;
+}
+
+#corner-image{
+  align-content: center;
+}
+
