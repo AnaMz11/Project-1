@@ -39,7 +39,7 @@ function handlePlayerChange(){
 // function messageDisplay () {
 //   if (exptectedButton === computerChoice)
 // }
-const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Never seen that type of memory before! Next Round"]
+const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Never seen that type of memory before! Next Round", "Keep on going!", "You're doing amazing!", "Awesome! Next round!"]
 
 const wrongChoiceMessage = ["Wrong choice! You have to start over!"]
 
@@ -81,9 +81,11 @@ buttonsArray.forEach((button => {
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
         setTimeout(() => {
         },2000);
-        round=1;
-        computerChoice = [];
-        colorButton(0);
+
+        // dont include game will start automatically
+        // round=1;
+        // computerChoice = [];
+        // colorButton(0);
       }
     }, 1000);
     // colorChange(event)
