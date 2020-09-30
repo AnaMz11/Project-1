@@ -70,6 +70,12 @@ buttonsArray.forEach((button => {
           round++;
           colorButton(0);
         }
+        //CHECK FOR WIN
+        // //round starts at 1 round === 4 will be 3 rounds
+        // if (round === 3){
+        //   statusDisplay.innerHTML = "Wow! You won the game! Play again!"
+        //   round=1
+        // }
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;

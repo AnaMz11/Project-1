@@ -48,3 +48,9 @@ h1{
   align-content: center;
 }
 
+#startButton:hover{
+  color: white;
+  background: black;
+ }
+
+
