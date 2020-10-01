@@ -16,20 +16,18 @@
 
 //oneset timeout function
 
+//GLOBAL Variable to keep track of rounds
+let round = 1;
+////GLOBAL Variable - computer choice starts as empty array and random selections are pushed to array
+let computerChoice = [];
 
 
 //Change message on who's turn it is
 function handlePlayerChange(){
     // currentPlayer = currentPlayer === "Your" ? "Mine" : "Your";
     statusDisplay.innerHTML = currentPlayerTurn();
-  }
-  
-  
-  //GLOBAL Variable to keep track of rounds
-  let round = 1;
-  ////GLOBAL Variable - computer choice starts as empty array and random selections are pushed to array
-  let computerChoice = [];
-  
+}
+
   
   //store status elements to use later
   const statusDisplay = document.querySelector('.game-status');
@@ -46,7 +44,7 @@ const wrongChoiceMessage = ["Wrong choice! Press start and try again!"]
 //fucntion to change color of buttons
 const colorChange = (event) => {
   //event target to target all the buttons
-  event.target.style.backgroundColor = 'yellow'
+  event.target.style.backgroundColor = '#FFD700'
 }
 
 //array of buttons
@@ -54,9 +52,9 @@ const buttonsArray = document.querySelectorAll('.button')
 buttonsArray.forEach((button => {
   button.addEventListener('click', (event) => {
     //TELLS ME WHICH BUTTONS ARE CLICKED
-    console.log(event.target)
+    // console.log(event.target)
 
-    event.target.style.backgroundColor = 'yellow'
+    event.target.style.backgroundColor = '#FFD700'
     setTimeout(() => {
       event.target.style.backgroundColor = 'black'
       //shift removes the first element array to check selection
@@ -70,11 +68,12 @@ buttonsArray.forEach((button => {
           round++;
           colorButton(0);
         }
-        // CHECK FOR WIN
+        // // CHECK FOR WIN
         //round starts at 1 round === 4 will be 3 rounds
         if (round === 3){
           statusDisplay.innerHTML = "Congratulations! No one has made it this far! You won the game!"
           // round=1
+          //setTimeout or try return
         }
       } else{
         //user selected wrong, reset the game.
@@ -109,7 +108,7 @@ for (let i = 0; i <buttonsArray.length; i++) {
   // console.log(i)
  let randomButton = Math.floor(Math.random()* 4)
  buttonsArray[0].style.order = randomButton
- console.log(randomButton)
+//  console.log(randomButton)
 }
 
 
@@ -119,7 +118,7 @@ function colorButton (currentIndex) {
     let randomButton = Math.floor(Math.random()* 4)
     //pushing ID of button to
     computerChoice.push(buttonsArray[randomButton].id)
-    buttonsArray[randomButton].style.backgroundColor = 'yellow'
+    buttonsArray[randomButton].style.backgroundColor = '#FFD700'
     setTimeout(() => {
       buttonsArray[randomButton].style.backgroundColor = 'black'
       setTimeout(() => {
@@ -133,6 +132,7 @@ function colorButton (currentIndex) {
 function handleStartGame () {
   statusDisplay.innerHTML = "Starting Game! Good Luck!"
   round=1;
+  console.log(round)
   //calls colorButton Function
   colorButton(0)
 }
@@ -140,3 +140,4 @@ function handleStartGame () {
 
 //START BUTTON
 document.querySelector('.game-reset').addEventListener("click",handleStartGame);
+

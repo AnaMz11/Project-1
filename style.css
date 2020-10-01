@@ -1,13 +1,6 @@
-body, html {
-  height: 100%;
-}
 
 body {
-  background-image: url('https://i.pinimg.com/originals/6d/e2/df/6de2df9db2899a610b72d595c0f3a59b.jpg');
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: radial-gradient(#e66465, #0000CD);
 }
 
 h1{
@@ -26,22 +19,10 @@ h1{
   border-radius: 12px; 
 }
 
-/* #button-grid-top{
-  text-align: center;
-  padding-top: 15%;
-  justify-content: center;
-  align-content: center;
-  height: auto;
-}
-#button-grid-bottom{
-  text-align: center;
-  padding: 25px;
 
+/* .game-status{
+  align-content: center;
 } */
-
-.game-status{
-  align-content: center;
-}
 
 #button-grid{
   display: grid;
@@ -57,9 +38,17 @@ h1{
   align-content: center;
 }
 
-#startButton:hover{
+
+#startButton{
+  height: 40px;
+  width: 80px;
+  font-size: 20px;
   color: white;
-  background: black;
+  background-color: black;
+}
+#startButton:hover{
+  color: black;
+  background:white;
  }
 
 
