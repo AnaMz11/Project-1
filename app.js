@@ -41,7 +41,7 @@ function handlePlayerChange(){
 // }
 const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Never seen that type of memory before! Next Round", "Keep on going!", "You're doing amazing!", "Awesome! Next round!"]
 
-const wrongChoiceMessage = ["Wrong choice! You have to start over!"]
+const wrongChoiceMessage = ["Wrong choice! Press start and try again!"]
 
 //fucntion to change color of buttons
 const colorChange = (event) => {
@@ -70,12 +70,12 @@ buttonsArray.forEach((button => {
           round++;
           colorButton(0);
         }
-        //CHECK FOR WIN
-        // //round starts at 1 round === 4 will be 3 rounds
-        // if (round === 3){
-        //   statusDisplay.innerHTML = "Wow! You won the game! Play again!"
-        //   round=1
-        // }
+        // CHECK FOR WIN
+        //round starts at 1 round === 4 will be 3 rounds
+        if (round === 3){
+          statusDisplay.innerHTML = "Congratulations! No one has made it this far! You won the game!"
+          // round=1
+        }
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
@@ -131,12 +131,12 @@ function colorButton (currentIndex) {
 
 //Restart Game
 function handleStartGame () {
-  statusDisplay.innerHTML = "Starting Game"
+  statusDisplay.innerHTML = "Starting Game! Good Luck!"
+  round=1;
   //calls colorButton Function
   colorButton(0)
 }
 
-//EVENT LISTENERS
 
 //START BUTTON
 document.querySelector('.game-reset').addEventListener("click",handleStartGame);

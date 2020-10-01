@@ -1,7 +1,12 @@
+body, html {
+  height: 100%;
+}
 
 body {
-  background-color: antiquewhite;
-  background-image: url('https://cdn3.vectorstock.com/i/1000x1000/12/57/rainbow-color-gradient-mesh-background-trendy-vector-20601257.jpg');
+  background-image: url('https://i.pinimg.com/originals/6d/e2/df/6de2df9db2899a610b72d595c0f3a59b.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -33,6 +38,10 @@ h1{
   padding: 25px;
 
 } */
+
+.game-status{
+  align-content: center;
+}
 
 #button-grid{
   display: grid;
