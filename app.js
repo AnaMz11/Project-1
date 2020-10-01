@@ -37,7 +37,7 @@ function handlePlayerChange(){
 // function messageDisplay () {
 //   if (exptectedButton === computerChoice)
 // }
-const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Never seen that type of memory before! Next Round", "Keep on going!", "You're doing amazing!", "Awesome! Next round!"]
+const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Next Round", "Keep on going!", "You're doing amazing!", "Awesome! Next round!"]
 
 const wrongChoiceMessage = ["Wrong choice! Press start and try again!"]
 
@@ -68,28 +68,20 @@ buttonsArray.forEach((button => {
           round++;
           colorButton(0);
         }
-        // // CHECK FOR WIN
-        //round starts at 1 round === 4 will be 3 rounds
-        if (round === 3){
-          statusDisplay.innerHTML = "Congratulations! No one has made it this far! You won the game!"
-          // round=1
-          //setTimeout or try return
-        }
+        // // // CHECK FOR WIN
+        // //round starts at 1 round === 4 will be 3 rounds
+        // if(round === 3){
+        //   statusDisplay.innerHTML = "Congratulations! You won the game!"
+        // }
+
+
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
         setTimeout(() => {
         },2000);
-
-        // dont include game will start automatically
-        // round=1;
-        // computerChoice = [];
-        // colorButton(0);
       }
     }, 1000);
-    // colorChange(event)
-    // buttonTimer(event)
-    // alert(event.target)
   })
 }))
 
@@ -101,8 +93,6 @@ const buttonTimer = (event) => {
     event.target.style.backgroundColor = 'black'
   }, 1000);
 }
-
-
 //LOOP through array of buttons and change color of 1 button
 for (let i = 0; i <buttonsArray.length; i++) {
   // console.log(i)

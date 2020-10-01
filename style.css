@@ -9,7 +9,6 @@ h1{
   font-size: 60px;
 }
 
-
 .button {
   background-color: black;
   font-size: 15x;
@@ -34,18 +33,19 @@ h1{
   margin:125px auto;
 }
 
-#corner-image{
-  align-content: center;
+.start-message {
+  text-align: center;
 }
 
-
 #startButton{
+  text-align: center;
   height: 40px;
   width: 80px;
   font-size: 20px;
   color: white;
-  background-color: black;
+  background-color: black; 
 }
+
 #startButton:hover{
   color: black;
   background:white;
