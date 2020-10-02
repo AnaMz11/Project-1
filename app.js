@@ -53,7 +53,6 @@ buttonsArray.forEach((button => {
   button.addEventListener('click', (event) => {
     //TELLS ME WHICH BUTTONS ARE CLICKED
     // console.log(event.target)
-
     event.target.style.backgroundColor = '#FFD700'
     setTimeout(() => {
       event.target.style.backgroundColor = 'black'
@@ -65,16 +64,17 @@ buttonsArray.forEach((button => {
         if(computerChoice.length === 0){
           const randomNum = Math.floor(Math.random() * arrayOfMessages.length);
           statusDisplay.innerHTML = arrayOfMessages[randomNum]
+          if(round === 3){
+            statusDisplay.innerHTML = "Congratulations! You won the game!"
+            return 
+          } else {
+            colorButton(0);
+          }
           round++;
-          colorButton(0);
         }
-        // // // CHECK FOR WIN
-        // //round starts at 1 round === 4 will be 3 rounds
-        // if(round === 3){
-        //   statusDisplay.innerHTML = "Congratulations! You won the game!"
-        // }
-
-
+        // // CHECK FOR WIN
+        //round starts at 1 round === 4 will be 3 rounds
+        
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
@@ -117,6 +117,8 @@ function colorButton (currentIndex) {
     }, 1000);
   }
 }
+
+
 
 //Restart Game
 function handleStartGame () {
