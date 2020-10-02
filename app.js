@@ -1,4 +1,4 @@
-// console.log("hey")
+//Pseudo Code === Ideas
 //4 squares (maybe add more later)
 //color of buttons will be black
 //color change of buttons will be yellow
@@ -9,39 +9,24 @@
 //round 2 computer will randmly change color for 2 buttons
 //then it will be the player's turn to "click" those same buttons and they will also light up
 //this will go on until the player makes a mistake - at then the game will restart
-//ADD ONS ========
-//the player will be able to restart the game at any point with the restart buttom 
 
-//game starts when the computer changes color for one rando
-
-//oneset timeout function
 
 //GLOBAL Variable to keep track of rounds
 let round = 1;
 ////GLOBAL Variable - computer choice starts as empty array and random selections are pushed to array
 let computerChoice = [];
 
-
-//Change message on who's turn it is
-// function handlePlayerChange(){
-//     statusDisplay.innerHTML = currentPlayerTurn();
-// }
-
-  
 //store status elements to use later
 const statusDisplay = document.querySelector('.game-status');
 
-  
-//starus display
+//status display
 const arrayOfMessages = ["On to the next round!","Wow! Next Round!","You Rock! Next Round!", "Woohoo! Next Round", "Incredible! Next Round!", "Great! Next Round!", "Spectacular! Next Round!","Awesome! Next round!"]
-
 
 //fucntion to change color of buttons
 const colorChange = (event) => {
   //event target to target all the buttons
   event.target.style.backgroundColor = '#FFD700'
 }
-
 
 //array of buttons
 const buttonsArray = document.querySelectorAll('.button')
@@ -59,9 +44,9 @@ buttonsArray.forEach((button => {
         //if no more choices left then increment round.
         if(computerChoice.length === 0){
           const randomNum = Math.floor(Math.random() * arrayOfMessages.length);
-          statusDisplay.innerHTML = arrayOfMessages[randomNum]
-          if(round === 3){
-            statusDisplay.innerHTML = "Congratulations! You won the game!"
+          statusDisplay.innerHTML = arrayOfMessages[randomNum] 
+          if(round === 2){
+            statusDisplay.innerHTML = "Congratulations! You won the game!" 
             return 
           } else {
             colorButton(0);
@@ -113,7 +98,6 @@ function colorButton (currentIndex) {
     }, 1000);
   }
 }
-
 
 
 //Restart Game
