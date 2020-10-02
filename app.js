@@ -23,23 +23,18 @@ let computerChoice = [];
 
 
 //Change message on who's turn it is
-function handlePlayerChange(){
-    // currentPlayer = currentPlayer === "Your" ? "Mine" : "Your";
-    statusDisplay.innerHTML = currentPlayerTurn();
-}
-
-  
-  //store status elements to use later
-  const statusDisplay = document.querySelector('.game-status');
-  // //display message after a condition is met
-  // const correctRound = () => {`It's ${currentPlayer} turn!`};
-  
-// function messageDisplay () {
-//   if (exptectedButton === computerChoice)
+// function handlePlayerChange(){
+//     statusDisplay.innerHTML = currentPlayerTurn();
 // }
-const arrayOfMessages = ["On to the next round!","Wow! Great Job! Next Round!","You Rock! Next Round!", "Woohoo! Next Round", "Keep on going!", "You're doing amazing!", "Awesome! Next round!"]
 
-const wrongChoiceMessage = ["Wrong choice! Press start and try again!"]
+  
+//store status elements to use later
+const statusDisplay = document.querySelector('.game-status');
+
+  
+//starus display
+const arrayOfMessages = ["On to the next round!","Wow! Next Round!","You Rock! Next Round!", "Woohoo! Next Round", "Incredible! Next Round!", "Great! Next Round!", "Spectacular! Next Round!","Awesome! Next round!"]
+
 
 //fucntion to change color of buttons
 const colorChange = (event) => {
@@ -47,12 +42,13 @@ const colorChange = (event) => {
   event.target.style.backgroundColor = '#FFD700'
 }
 
+
 //array of buttons
 const buttonsArray = document.querySelectorAll('.button')
 buttonsArray.forEach((button => {
   button.addEventListener('click', (event) => {
     //TELLS ME WHICH BUTTONS ARE CLICKED
-    // console.log(event.target)
+    console.log(event.target)
     event.target.style.backgroundColor = '#FFD700'
     setTimeout(() => {
       event.target.style.backgroundColor = 'black'
@@ -77,7 +73,7 @@ buttonsArray.forEach((button => {
         
       } else{
         //user selected wrong, reset the game.
-        statusDisplay.innerHTML = `${wrongChoiceMessage[0]}`;
+        statusDisplay.innerHTML = "Wrong choice! Press Start and try again!";
         setTimeout(() => {
         },2000);
       }
@@ -124,7 +120,6 @@ function colorButton (currentIndex) {
 function handleStartGame () {
   statusDisplay.innerHTML = "Starting Game! Good Luck!"
   round=1;
-  console.log(round)
   //calls colorButton Function
   colorButton(0)
 }
