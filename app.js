@@ -45,24 +45,24 @@ buttonsArray.forEach((button => {
         if(computerChoice.length === 0){
           const randomNum = Math.floor(Math.random() * arrayOfMessages.length);
           statusDisplay.innerHTML = arrayOfMessages[randomNum] 
-          if(round === 2){
+          if(round === 3){
             statusDisplay.innerHTML = "Congratulations! You won the game!" 
+            document.querySelector('.game-reset').style.visibility = "visible";
             return 
           } else {
             colorButton(0);
           }
           round++;
         }
-        // // CHECK FOR WIN
-        //round starts at 1 round === 4 will be 3 rounds
-        
       } else{
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = "Wrong choice! Press Start and try again!";
         setTimeout(() => {
-        },2000);
+          // document.querySelector('.game-reset').disabled = false;
+          document.querySelector('.game-reset').style.visibility = "visible";
+        },500);
       }
-    }, 1000);
+    }, 500);
   })
 }))
 
@@ -72,7 +72,7 @@ const buttonTimer = (event) => {
   // console.log(event)
   setTimeout(() => {
     event.target.style.backgroundColor = 'black'
-  }, 1000);
+  }, 500);
 }
 //LOOP through array of buttons and change color of 1 button
 for (let i = 0; i <buttonsArray.length; i++) {
@@ -94,8 +94,8 @@ function colorButton (currentIndex) {
       buttonsArray[randomButton].style.backgroundColor = 'black'
       setTimeout(() => {
         colorButton(++currentIndex);
-      },1000);
-    }, 1000);
+      },500);
+    }, 500);
   }
 }
 
@@ -104,6 +104,9 @@ function colorButton (currentIndex) {
 function handleStartGame () {
   statusDisplay.innerHTML = "Starting Game! Good Luck!"
   round=1;
+  // document.querySelector('.game-reset').disabled = true;
+  document.querySelector('.game-reset').style.visibility = "hidden";
+
   //calls colorButton Function
   colorButton(0)
 }
