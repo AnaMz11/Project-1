@@ -2,7 +2,7 @@
 //4 squares (maybe add more later)
 //color of buttons will be black
 //color change of buttons will be yellow
-//game starts with computer turn - after that it will be rotating (computer > user)
+//game starts with computer turn - after that it will be rotating (computer to user)
 //round 1 computer will randomly change color for one of the buttons at random
 //then it will be the player's turn to "click" that same button and it will also light up
 //once the player makes the choice it will go back to computers turn 
