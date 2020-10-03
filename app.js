@@ -33,29 +33,33 @@ const buttonsArray = document.querySelectorAll('.button')
 buttonsArray.forEach((button => {
   button.addEventListener('click', (event) => {
     //TELLS ME WHICH BUTTONS ARE CLICKED
-    console.log(event.target)
+    // console.log(event.target)
     event.target.style.backgroundColor = '#FFD700'
     setTimeout(() => {
       event.target.style.backgroundColor = 'black'
       //shift removes the first element array to check selection
       let exptectedButton = computerChoice.shift()
+      //user selected correct button go it the loop to meet conditions
       if (exptectedButton === event.target.id){
-        //user selected correct button
         //if no more choices left then increment round.
         if(computerChoice.length === 0){
           const randomNum = Math.floor(Math.random() * arrayOfMessages.length);
+          //displays a winning message from the winning array
           statusDisplay.innerHTML = arrayOfMessages[randomNum] 
+          //checks for win - can be changed to any number and will go up to that round
           if(round === 3){
             statusDisplay.innerHTML = "Congratulations! You won the game!" 
             document.querySelector('.game-reset').style.visibility = "visible";
+            //exit the condition and have to restart the game
             return 
           } else {
             colorButton(0);
           }
+          //increments round if user choice is correct
           round++;
         }
       } else{
-        //user selected wrong, reset the game.
+        //user selected incorrect choice - game ends
         statusDisplay.innerHTML = "Wrong choice! Press Start and try again!";
         setTimeout(() => {
           document.querySelector('.game-reset').style.visibility = "visible";
@@ -66,27 +70,12 @@ buttonsArray.forEach((button => {
 }))
 
 
-//empty event - the event is defined in the buttons array function
-const buttonTimer = (event) => {
-  // console.log(event)
-  setTimeout(() => {
-    event.target.style.backgroundColor = 'black'
-  }, 500);
-}
-//LOOP through array of buttons and change color of 1 button
-for (let i = 0; i <buttonsArray.length; i++) {
-  // console.log(i)
- let randomButton = Math.floor(Math.random()* 4)
- buttonsArray[0].style.order = randomButton
-//  console.log(randomButton)
-}
-
 
 function colorButton (currentIndex) {
   if(currentIndex<round){
-    console.log(currentIndex)
+    // console.log(currentIndex)
     let randomButton = Math.floor(Math.random()* 4)
-    //pushing ID of button to
+    //pushing ID of button to empty array for computer choice
     computerChoice.push(buttonsArray[randomButton].id)
     buttonsArray[randomButton].style.backgroundColor = '#FFD700'
     setTimeout(() => {
