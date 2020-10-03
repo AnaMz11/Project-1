@@ -58,7 +58,6 @@ buttonsArray.forEach((button => {
         //user selected wrong, reset the game.
         statusDisplay.innerHTML = "Wrong choice! Press Start and try again!";
         setTimeout(() => {
-          // document.querySelector('.game-reset').disabled = false;
           document.querySelector('.game-reset').style.visibility = "visible";
         },500);
       }
@@ -84,8 +83,8 @@ for (let i = 0; i <buttonsArray.length; i++) {
 
 
 function colorButton (currentIndex) {
-    // statusDisplay.innerHTML = ""
   if(currentIndex<round){
+    console.log(currentIndex)
     let randomButton = Math.floor(Math.random()* 4)
     //pushing ID of button to
     computerChoice.push(buttonsArray[randomButton].id)
@@ -106,8 +105,6 @@ function handleStartGame () {
   round=1;
   // document.querySelector('.game-reset').disabled = true;
   document.querySelector('.game-reset').style.visibility = "hidden";
-
-  //calls colorButton Function
   colorButton(0)
 }
 
