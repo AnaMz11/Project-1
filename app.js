@@ -10,6 +10,38 @@
 //then it will be the player's turn to "click" those same buttons and they will also light up
 //this will go on until the player makes a mistake - at then the game will restart
 
+//Get modal element
+const modal = document.getElementById('simpleModal');
+//Get open modal button 
+const modalBtn = document.getElementById('modalBtn');
+//Get close button
+const closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+//listen for click
+modalBtn.addEventListener('click', openModal);
+//liste for close click
+closeBtn.addEventListener('click', closeModal);
+//listen for outside click
+window.addEventListener('click', clickOutside);
+
+
+//function to open modal
+function openModal(){
+  modal.style.display = 'block';
+}
+
+//function to close modal
+function closeModal(){
+  modal.style.display = 'none';
+}
+
+//function to close modal if click is outsude modal box
+function clickOutside(e){
+  if(e.targe === modal){
+    modal.style.display = 'none';
+  }
+}
+
 
 //GLOBAL Variable to keep track of rounds
 let round = 1;
@@ -47,7 +79,7 @@ buttonsArray.forEach((button => {
           //displays a winning message from the winning array
           statusDisplay.innerHTML = arrayOfMessages[randomNum] 
           //checks for win - can be changed to any number and will go up to that round
-          if(round === 3){
+          if(round === 10){
             statusDisplay.innerHTML = "Congratulations! You won the game!" 
             document.querySelector('.game-reset').style.visibility = "visible";
             //exit the condition and have to restart the game

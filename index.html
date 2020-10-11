@@ -10,21 +10,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Simon Says</h1>
-<!-- 
-  <div id="button-grid-top">
-    <button class="btn" id="btnOne"></button>
-    &nbsp
-    &nbsp
-    <button class="btn" id="btnTwo"></button>
+<button id="modalBtn" class="intructionsBtn">Game Instructions: Click Here!</button>
+
+<div id="simpleModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+    <span class="closeBtn">&times;</span>
+    <h2>Game Instructions:</h2>
+    </div>
+    
+    <ul>
+      <li>The game starts with 4 black buttons.</li>
+      <li>Turns are alternating between computer and player.</li>
+      <li>First round the computer will randomly select one button and change the color from black to yellow.</li>
+      <li>It is now the players turn to click that same button.</li>
+      <li>If the player selects the correct button, the game will advance to the next round. </li>
+      <li>Each round will increment by an additional button changing to yellow. <br>
+        Example: Round 2, computer turn will select 2 buttons, one after the other and turn yellow. The player will then have to select those 2 same buttons and so forth. </li>
+      <li>The game is won if the player can keep up with 10 random selections!</li>
+    
+      <p>GOOD LUCK!</p>
+    </ul>
   </div>
-  
-  <div id="button-grid-bottom">
-    <button class="btn" id="btnThree"></button>
-    &nbsp
-    &nbsp
-    <button class="btn" id="btnFour"></button>
-  </div> -->
+</div>
+
+
+  <h1>Simon Says</h1>
 
   <div id="button-grid">
     <button class="button" id="btnOne"></button>
@@ -33,9 +44,6 @@
     <button class="button" id="btnFour"></button>
   </div>
 
-  
-  
-  
   <div class="start-message">
     <h2 class="game-status"></h2>
     <button class="game-reset" id="startButton">Start</button>
